@@ -26,6 +26,8 @@
 
 .App-link {
   color: #61dafb;
+  background: linear-gradient(45deg, #ff6900, #bdc00f, #7bdcb5, #00d084, #8ed1fc, #0693e3);
+
 }
 
 @keyframes App-logo-spin {
