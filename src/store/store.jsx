@@ -6,7 +6,7 @@ import {
   deleteSongSaga,
   editSongSaga,
   songsSaga,
-} from "./songListSagas";
+} from "./songListSaga";
 import { all } from "redux-saga/effects";
 
 const saga = createSagaMiddleware();

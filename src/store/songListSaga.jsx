@@ -8,7 +8,7 @@ import {
 import axios from "axios";
 
 function* GetSongsFetch() {
-  const songs = yield call(() => fetch("http://localhost:5000/api/v1/songs"));
+  const songs = yield call(() => fetch("https://song-list-b8xl.onrender.com/api/v1/songs"));
   const response = yield songs.json();
   yield put(getSongsSuccess(response));
 }
@@ -16,7 +16,7 @@ function* GetSongsFetch() {
 function* AddSong(action) {
   try {
     const response = yield call(() =>
-      axios.post("http://localhost:5000/api/v1/songs", action.payload)
+      axios.post("https://song-list-b8xl.onrender.com/api/v1/songs", action.payload)
     );
     const newSong = response.data; 
     yield put(addSongSuccess(newSong));
@@ -29,7 +29,7 @@ function* AddSong(action) {
 function* DeleteSong(action) {
   try {
     yield call(() =>
-      axios.delete(`http://localhost:5000/api/v1/songs/${action.payload}`)
+      axios.delete(`https://song-list-b8xl.onrender.com/api/v1/songs/${action.payload}`)
     );
     yield put(deleteSongSuccess());
   } catch (error) {
@@ -41,7 +41,7 @@ function* EditSong(action) {
   try {
     const response = yield call(() => {
       return axios.patch(
-        `http://localhost:5000/api/v1/songs/${action.payload.id}`,
+        `https://song-list-b8xl.onrender.com/api/v1/songs/${action.payload.id}`,
         action.payload
       );
     });
